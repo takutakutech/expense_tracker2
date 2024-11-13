@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>家計簿アプリ - 月別合計</h2>
+<table>
+    <tr>
+        <th>分野</th>
+        <th>月</th>
+        <th>合計金額 (円)</th>
+        <th>詳細</th>
+    </tr>
+    {% for expense in expenses %}
+    <tr>
+        <td>{{ expense['category'] }}</td>
+        <td>{{ expense['month'] }}</td>
+        <td>{{ expense['total'] }}</td>
+        <td>
+            <a href="{{ url_for('category_detail', category=expense['category']) }}">詳細を見る</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="{{ url_for('add_expense') }}">経費を追加</a>
+{% endblock %}

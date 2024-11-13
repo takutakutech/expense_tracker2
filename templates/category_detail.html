@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ category }}の詳細</h2>
+<table>
+    <tr>
+        <th>商品名</th>
+        <th>価格</th>
+        <th>追加日時</th>
+        <th>メモ</th>
+        <th>アクション</th>
+    </tr>
+    {% for expense in expenses %}
+    <tr>
+        <td>{{ expense['item_name'] }}</td>
+        <td>{{ expense['price'] }}</td>
+        <td>{{ expense['time_added'] }}</td>
+        <td>{{ expense['memo'] }}</td>
+        <td>
+            <a href="{{ url_for('edit_expense', expense_id=expense['id']) }}">編集</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="{{ url_for('add_expense') }}">経費を追加</a>
+{% endblock %}

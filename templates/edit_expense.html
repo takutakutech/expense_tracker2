@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>経費の編集</h2>
+<form method="post">
+    <label for="category">分野:</label>
+    <select name="category" id="category" required>
+        <option value="衣" {% if expense['category'] == '衣' %}selected{% endif %}>衣</option>
+        <option value="食" {% if expense['category'] == '食' %}selected{% endif %}>食</option>
+        <option value="住" {% if expense['category'] == '住' %}selected{% endif %}>住</option>
+        <option value="その他" {% if expense['category'] == 'その他' %}selected{% endif %}>その他</option>
+    </select>
+    <br>
+    <label for="item_name">商品名:</label>
+    <input type="text" name="item_name" id="item_name" value="{{ expense['item_name'] }}" required>
+    <br>
+    <label for="price">値段 (円):</label>
+    <input type="number" name="price" id="price" value="{{ expense['price'] }}" required>
+    <br>
+    <label for="memo">メモ:</label>
+    <textarea name="memo" id="memo">{{ expense['memo'] }}</textarea>
+    <br>
+    <button type="submit">更新</button>
+</form>
+{% endblock %}

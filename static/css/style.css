@@ -1,0 +1,33 @@
+body {
+    background-color: #f5f5dc; /* ベージュの背景色 */
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2e0c9; /* 少し濃いベージュ */
+}
+
+button {
+    background-color: #d2b48c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c19a6b;
+}
